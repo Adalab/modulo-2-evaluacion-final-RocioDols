@@ -21,9 +21,9 @@ function handleButtonSearch() {
     let inputSearchww = inputSearch.value;
     fetch(`https://api.jikan.moe/v3/search/anime?q=${inputSearchww}&limit=3`)
         .then(response => response.json())
-        .then(dataSearch => { //Todo lo que lega del servidor
+        .then(dataSearch => { //Todo lo que lega del servidor,la info de la búsqueda
             //guardo en data lo que me llega del fetch para poder trabajarla desde otros sitios
-            data = dataSearch.results;//el result es el que trael el arrray de imagenes
+            data = dataSearch.results;//el result es el que trae el el arrray de imagenes
 
             renderSerie();//Para pintar lod datos de la búsqueda no puedo pintarlos.Es el then quien tiene las imagenes xq es asincrono
             console.log(dataSearch);
@@ -53,7 +53,7 @@ function renderSerie() {
 function handleSerieFav(ev) {
     const favImgId = ev.currentTarget.dataset.id;
 
-    //Hago lo mismo para favoritos, tengto que buscar el onjeto en favoritos para comprobar si ya lo tengo, me valo para imagenes fav o del listado.Al pincxhar en normal te busca en favoritos, si el find no encuentra nada te devuelve un undefined.
+    //Hago lo mismo para favoritos, tengto que buscar el onjeto en favoritos para comprobar si ya lo tengo, me valo para imagenes fav o del listado.Al pincxhar en normal te busca en favoritos, si el find no encuentra nada te devuelve un undefined.Esta comprobamndo que no este para que no se repita o para agregarla
     const foundSerieFav = dataFav.find(serie => serie.mal_id === parseInt(favImgId));
     if (foundSerieFav === undefined) {
         // console.dir(favImgId);
@@ -74,7 +74,7 @@ function handleSerieFav(ev) {
 function renderSeriesFav() {
     resultSeriesFav.innerHTML = '';
     for (const serie of dataFav) {
-        const imageURL = serie.image_url;//image_url es un atributo que esta dentro del data
+        const imageURL = serie.image_url;//image_url es un atributo que esta dentro del data.Esto esta preparado para luego ponerle lo de la img por defecto
         console.log(imageURL);
         resultSeriesFav.innerHTML += `<img class="js_image" src="${imageURL}" alt="${serie.title}" data-id="${serie.mal_id}">`;
         resultSeriesFav.innerHTML += `<h3>"${serie.title}"</h3>`;
