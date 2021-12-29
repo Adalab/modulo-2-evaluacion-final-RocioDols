@@ -1,3 +1,14 @@
-body {
+
+.page__main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.resultsContainer{
+    background-color: pink;
+    display: flex;
+    flex-grow: 1;
+    // width: 100%;//Se lo pongo porq no tiene nada dentro
 
 }
