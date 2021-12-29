@@ -52,20 +52,17 @@ function renderSerie() {
 
 function handleSerieFav(ev) {
     const favImgId = ev.currentTarget.dataset.id;
-    // console.dir(favImgId);
-    //Qioero guardar el objeto de data, la img ocard que pinche dentro de un array dataFav
-    //En data vamos a buscar el id el gancho que le hemos puesto en el html data.find cada elemento del array es una serie
-    //Aqui se guarda el objeto a la imagen que ha sido clicada
-    const foundSerieData = data.find(serie => serie.mal_id === parseInt(favImgId));//Me llevo todo el objeto
-    // console.log(foundSerieData);
-    //Ahora agregamosn 
 
     //Hago lo mismo para favoritos, tengto que buscar el onjeto en favoritos para comprobar si ya lo tengo, me valo para imagenes fav o del listado.Al pincxhar en normal te busca en favoritos, si el find no encuentra nada te devuelve un undefined.
     const foundSerieFav = dataFav.find(serie => serie.mal_id === parseInt(favImgId));
-
-
-
     if (foundSerieFav === undefined) {
+        // console.dir(favImgId);
+        //Qioero guardar el objeto de data, la img ocard que pinche dentro de un array dataFav
+        //En data vamos a buscar el id el gancho que le hemos puesto en el html data.find cada elemento del array es una serie
+        //Aqui se guarda el objeto a la imagen que ha sido clicada
+        const foundSerieData = data.find(serie => serie.mal_id === parseInt(favImgId));//Me llevo todo el objeto
+        // console.log(foundSerieData);
+        //Ahora agregamosn 
 
         dataFav.push(foundSerieData);
         //Hay que evitar que se repita el mismo
