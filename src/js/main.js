@@ -27,7 +27,14 @@ function handleButtonSearch() {
 function renderSerie() {
     resultSearchSeries.innerHTML = "";
     for (const serie of data) {
-        resultSearchSeries.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${serie.image_url} alt=${serie.title}/>`;
+        //Saco el serie.image_url a una variable externa
+        // let image_url
+        let imgUrl = serie.image_url;
+        if (imgUrl === null) {
+            imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
+        }
+
+        resultSearchSeries.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${imgUrl} alt=${serie.title}/>`;
         resultSearchSeries.innerHTML += `<h2/>${serie.title}</h2>`;
     }
 
@@ -42,29 +49,41 @@ function handleSerieFav(ev) {
 
     const clickSerieId = parseInt(ev.currentTarget.dataset.id);
 
-    const foundSerieinFav = dataFav.find(serie => serie.mal_id === clickSerieId);
+    const foundSerieinFav = dataFav.findIndex(serie => serie.mal_id === clickSerieId);
 
-    if (foundSerieinFav === undefined) {
+    if (foundSerieinFav === -1) {
+        //Si no encuentra nada al cambiarlo a findIndex te devuelve -1
         addSerieFav(clickSerieId);
+    } else {
+        // aqui es para cuando le pincho a la misma img se eliminde de favoritos
+        dataFav.splice(foundSerieinFav, 1);
     }
-}
-
-function addSerieFav(clickSerieId) {
-    const serieClicada = data.find(serie => serie.mal_id === clickSerieId);
-    dataFav.push(serieClicada);
-    console.log(dataFav);
+    //Tengo que pintarla si me la elimina lo hago aqui:
     renderFav();
 }
 
-
+function addSerieFav(clickSerieId) {
+    const selectedSerie = data.find(serie => serie.mal_id === clickSerieId);
+    dataFav.push(selectedSerie);
+    console.log(dataFav);
+    renderFav();
+}
 
 function renderFav() {
     resultSeriesFav.innerHTML = '';
 
     for (const serie of dataFav) {
+        resultSeriesFav.innerHTML += `<i class="far fa-times-circle"></i>`;
+        let imgUrl = serie.image_url;
+        if (imgUrl === null) {
+            imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
+        }
+
         resultSeriesFav.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${serie.image_url} alt=${serie.title}/>`;
         resultSeriesFav.innerHTML += `<h2/>${serie.title}</h2>`;
     }
 }
 
 btnSearch.addEventListener('click', handleButtonSearch);
+
+//
