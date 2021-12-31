@@ -68,12 +68,26 @@ function addSerieFav(clickSerieId) {
     console.log(dataFav);
     renderFav();
 }
+//Eliminar con la x
+//La manera de relacionar la X con la serie es poniendole a la x un data-id= mal_id que es el mismo id que puse a la img del render
+function handleRemoveSerie() {
+    //Buscamos el id de donde se ha clicado
+    const removeXId = parseInt(ev.currentTarget.dataset.id);
+    //Buscamos dentro del array fav la posicion 
+    const foundRemoveX = dataFav.findIndex(serie => serie.mal_id === removeXId);
+
+
+
+}
+
+
+
 
 function renderFav() {
     resultSeriesFav.innerHTML = '';
 
     for (const serie of dataFav) {
-        resultSeriesFav.innerHTML += `<i class="far fa-times-circle"></i>`;
+        resultSeriesFav.innerHTML += `<i class="far fa-times-circle js_iconX" data-id=${serie.mal_id}></i>`;
         let imgUrl = serie.image_url;
         if (imgUrl === null) {
             imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
@@ -82,7 +96,16 @@ function renderFav() {
         resultSeriesFav.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${serie.image_url} alt=${serie.title}/>`;
         resultSeriesFav.innerHTML += `<h2/>${serie.title}</h2>`;
     }
+    //1 Necesito recoger todas las x le pongo una clase
+    const iconsX = document.querySelectorAll('.js_iconX');
+
+    for (const icon of iconsX) {
+        icon.addEventListener('click', handleRemoveSerie);
+    }
+
 }
+
+
 
 btnSearch.addEventListener('click', handleButtonSearch);
 
