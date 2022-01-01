@@ -6,14 +6,13 @@
         <input class="js_btnReset" type="reset" value="Reset">
     </form>
     <div class="resultsContainer">
-        <section>
-            <ul class="js_resultSeriesFav"></ul>
+        <section class="sectFav">
+            <h2 class="sectFav__title">Mis series favoritas</h2>
+            <div class="divResultsFav js_resultSeriesFav"></div>
+            <button class="js_trash sectFav__reset"> <i class="fas fa-trash"></i> Reset</button>
         </section>
-        <section>
-            <h2>Mis series favoritas</h2>
-            <i class="fas fa-trash js_trash"></i>
-            <ul class="js_resultSearchSeries"></ul>
+        <section class="sectResuls">
+            <div class="divResults js_resultSearchSeries"></div>
         </section>
     </div>
-
 </main>
