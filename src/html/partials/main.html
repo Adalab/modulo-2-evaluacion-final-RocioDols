@@ -1,16 +1,19 @@
 <main class="page__main">
-    <h1>Buscador de series Anime</h1>
-
     <form class="form">
+        <i class="fas fa-search"></i>
         <input class="js_inputSearch" type="text" placeholder="Naruto" />
         <button class="js_btnSearch" type="button">Buscar</button>
         <input class="js_btnReset" type="reset" value="Reset">
     </form>
     <div class="resultsContainer">
-
-        <section class="js_resultSeriesFav"></section>
-        <section class="js_resultSearchSeries"></section>
+        <section>
+            <ul class="js_resultSeriesFav"></ul>
+        </section>
+        <section>
+            <h2>Mis series favoritas</h2>
+            <i class="fas fa-trash js_trash"></i>
+            <ul class="js_resultSearchSeries"></ul>
+        </section>
     </div>
-
 
 </main>

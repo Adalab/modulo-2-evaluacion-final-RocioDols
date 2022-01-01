@@ -7,10 +7,13 @@ const btnSearch = document.querySelector('.js_btnSearch');
 const btnReset = document.querySelector('.js_btnReset');
 const resultSearchSeries = document.querySelector('.js_resultSearchSeries');
 const resultSeriesFav = document.querySelector('.js_resultSeriesFav');
+const trashFav = document.querySelector('.js_trash');
 
 let data = [];
 
 let dataFav = [];
+//Recojo la info del Local
+getFavorite();
 
 
 function handleButtonSearch() {
@@ -34,8 +37,8 @@ function renderSerie() {
             imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
         }
 
-        resultSearchSeries.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${imgUrl} alt=${serie.title}/>`;
-        resultSearchSeries.innerHTML += `<h2/>${serie.title}</h2>`;
+        resultSearchSeries.innerHTML += `<li><img class="js_imgResult" data-id=${serie.mal_id} src=${imgUrl} alt=${serie.title}/>`;
+        resultSearchSeries.innerHTML += `<h2/>${serie.title}</h2></li>`;
     }
 
     const imgResults = document.querySelectorAll('.js_imgResult');
@@ -48,41 +51,33 @@ function renderSerie() {
 function handleSerieFav(ev) {
 
     const clickSerieId = parseInt(ev.currentTarget.dataset.id);
-
     const foundSerieinFav = dataFav.findIndex(serie => serie.mal_id === clickSerieId);
 
     if (foundSerieinFav === -1) {
-        //Si no encuentra nada al cambiarlo a findIndex te devuelve -1
         addSerieFav(clickSerieId);
     } else {
-        // aqui es para cuando le pincho a la misma img se eliminde de favoritos
         dataFav.splice(foundSerieinFav, 1);
+        setFavorite();
     }
-    //Tengo que pintarla si me la elimina lo hago aqui:
     renderFav();
 }
 
 function addSerieFav(clickSerieId) {
     const selectedSerie = data.find(serie => serie.mal_id === clickSerieId);
     dataFav.push(selectedSerie);
+    setFavorite();
     console.log(dataFav);
     renderFav();
 }
-//Eliminar con la x
-//La manera de relacionar la X con la serie es poniendole a la x un data-id= mal_id que es el mismo id que puse a la img del render
-function handleRemoveSerie() {
-    //Buscamos el id de donde se ha clicado
+
+function handleRemoveSerie(ev) {
     const removeXId = parseInt(ev.currentTarget.dataset.id);
-    //Buscamos dentro del array fav la posicion 
+    console.log(removeXId);
     const foundRemoveX = dataFav.findIndex(serie => serie.mal_id === removeXId);
-
-
-
+    dataFav.splice(foundRemoveX, 1);
+    setFavorite();
+    renderFav();
 }
-
-
-
-
 function renderFav() {
     resultSeriesFav.innerHTML = '';
 
@@ -93,10 +88,10 @@ function renderFav() {
             imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
         }
 
-        resultSeriesFav.innerHTML += `<img class="js_imgResult" data-id=${serie.mal_id} src=${serie.image_url} alt=${serie.title}/>`;
-        resultSeriesFav.innerHTML += `<h2/>${serie.title}</h2>`;
+        resultSeriesFav.innerHTML += `<li><img class="js_imgResult" data-id=${serie.mal_id} src=${serie.image_url} alt=${serie.title}/>`;
+        resultSeriesFav.innerHTML += `<h2/>${serie.title}</h2></li>`;
     }
-    //1 Necesito recoger todas las x le pongo una clase
+
     const iconsX = document.querySelectorAll('.js_iconX');
 
     for (const icon of iconsX) {
@@ -109,4 +104,18 @@ function renderFav() {
 
 btnSearch.addEventListener('click', handleButtonSearch);
 
-//
+function setFavorite() {
+    localStorage.setItem("dataFav", JSON.stringify(dataFav));
+}
+
+function getFavorite() {
+    dataFav = JSON.parse(localStorage.getItem("dataFav"));
+    renderFav();
+}
+
+function handleResetFav() {
+    dataFav = [];
+    renderFav();
+    setFavorite();
+}
+trashFav.addEventListener('click', handleResetFav);
