@@ -88,7 +88,6 @@ body{
     width: 100%;
     background-repeat: no-repeat;
     display:grid;
-    /* dentro del grid estas definiendo 2 columnas que son 2 section , 1 fav y otro resul el tamaño se calcula sumando el total de los fr serian 3 y dandole a cada columna espacio %.  */
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
 }
