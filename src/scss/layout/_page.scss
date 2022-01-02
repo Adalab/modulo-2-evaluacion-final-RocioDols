@@ -2,10 +2,24 @@
 body{
     background-image: linear-gradient(to bottom, #0b2e28, #299599, #113d34);
     z-index: 1;
+    font-family: 'Courier New', Courier, monospace;
+}
+.page__header{
+    display: flex;
+}
+.title_page{
+    color: white;
+    margin:40px 20px;
+    text-align: center;
+    font-size: 45px;
+}
+.img_title{
+    height: 100px;
+    background-color: transparent;
 }
 
 .form__inputSearch{
-    color: #38373a;
+    /* color: #38373a; */
     width: 30%;
     font-size: 18px;
     font-weight: 900;
@@ -13,20 +27,19 @@ body{
     padding: 10px;
     margin: 30px 0px 20px 30px;
     outline: none;
-    background-color: #e8f0fe;
+    /* background-color: #e8f0fe; */
     text-decoration: none;
     border: none;
     border-radius: 20px;
-    border-right: 2px solid #f5b436;
+    /* border-right: 2px solid #f5b436; */
     transition: all ease 0.4s;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
 }
 .form__inputSearch:hover{
-    background-color: rgb(163, 90, 103);
-    border-bottom: 2px solid peru;
-    border-right: 2px solid peru;
-    box-shadow: 2px 2px 2px;
+    background-color: rgb(129, 83, 214);
     color: white;
     transform: translate(-1px, -1px);
+    cursor: pointer;
 }
 .form__buttonSearch , .form__resetSearch {
     font-family: "Tourney";
@@ -35,25 +48,26 @@ body{
     font-weight: 600;
     width: 150px;
     padding: 10px;
-    margin: 20px 30px;
+    margin: 20px 22px;
     height: 40px;
     border: none;
     border-radius: 20px;
-    /* border-bottom: 2px solid #72f536;
-    border-right: 2px solid #8cf536; */
     text-transform: uppercase;
     background-color: #e8f0fe;
     transition: all ease 0.4s;
     box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
     transition: all ease 0.4s;
+    cursor: pointer;
 }
 .form__buttonSearch:hover , .form__resetSearch:hover{
-    background-color: rgb(163, 90, 103);
-    border-bottom: 2px solid peru;
-    border-right: 2px solid peru;
-    box-shadow: 2px 2px 2px;
+    background-color: rgb(90, 163, 102);
     color: white;
     transform: translate(-1px, -1px);
+    cursor: pointer;
+}
+.form__resetSearch:hover{
+    background-color: rgb(180, 8, 40);
+    margin-left: 20px;
 }
 
 /* Estilos para el main */
@@ -80,6 +94,7 @@ body{
     border-radius: 20px;
     margin: 3em;
     background-color: cadetblue;
+    
 }
 
 .divResultsFav{
@@ -91,13 +106,25 @@ body{
     display: grid;
     grid-template-columns: repeat(4,1fr) ;
     grid-template-rows: 1fr;
+    cursor: pointer;
+    padding: 2em 3em;
 }
 .cardResult{
     /* width: 25%; */
     margin: 12px;
-    border: 4px solid purple;
+    border: 1px solid black;
     border-radius: 10px;
     background-color: rgb(211, 201, 183);
+    transition: all ease 0.4s;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 12%);
+    background-color: transparent;
+    color: black;
+    position: relative;
+}
+.cardResult:hover{
+    cursor: pointer;
+    transform: translate(-1px, -1px);
+    background-color: hotpink;
 }
 .cardResult__img{
     width: 100%;
@@ -108,7 +135,6 @@ body{
     margin: .7em;
     padding: 0px;
     text-align: center;
-    color: purple;
     text-transform: capitalize;
 }
 
@@ -121,6 +147,7 @@ body{
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
+    cursor: pointer;
 }
 .sectFav__title{
     padding: 20px;
@@ -141,7 +168,13 @@ body{
     justify-content: space-around;
     transition: all ease 0.3s;
     margin-bottom: 2em;
-    background-color: rosybrown;
+    background-color: #F4A460;
+    transition: all ease 0.4s;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 12%);
+}
+.cardFav:hover{
+    transform: translate(-1px, -1px);
+    background-color: hotpink;
 }
 .cardFav__img{
     width: 100%;
@@ -149,12 +182,14 @@ body{
 }
 .cardFav__titleFav{
     margin: 12px;
-    font-size: 22px;
+    font-size: 18px;
     text-align: center;
 }
 .cardFav__iconX{
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 10px;
+    color: red;
+   
 }
 
 .sectFav__reset{
@@ -168,26 +203,32 @@ body{
     height: 40px;
     border: none;
     border-radius: 15px;
-    border-right: 4px solid purple;
     text-transform: uppercase;
     background-color: #e8f0fe;
     transition: all ease 0.4s;
     box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
+    cursor: pointer;
 }
 
 .sectFav__reset:hover{
-    background-color:rgb(163, 90, 103);
-      border-bottom: 2px solid peru;
-      border-right: 2px solid peru;
-      box-shadow: 2px 2px 2px;
-      color: white;
-      transform: translate(-2px, -2px);
+    background-color: rgb(228, 120, 32);
+    color: white;
+    transform: translate(-1px, -1px);
+    cursor: pointer;
 }
 
 /* Estilos para clicar y cambiar fondo,borde y color de letra */
 
 .searchResultSelected{
-    border-color: red;
-    background-color: yellow;
-    color: red;
+    border: 4px solid white;
+    border-color: white;
+    background-color: #F4A460;
+    color: white;
+}
+.flameIcon{
+    width: 15%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(-50%, -80%);
 }

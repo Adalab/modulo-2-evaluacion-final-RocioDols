@@ -1,15 +1,14 @@
 <main class="page__main">
     <form class="form">
-        <i class="fas fa-search"></i>
-        <input class="js_inputSearch" type="text" placeholder="Naruto" />
-        <button class="js_btnSearch" type="button">Buscar</button>
-        <input class="js_btnReset" type="reset" value="Reset">
+        <input class="form__inputSearch js_inputSearch" type="text" placeholder="Naruto" />
+        <button class="form__buttonSearch js_btnSearch" type="button">Buscar <i class="fas fa-search"></i></button>
+        <input class="form__resetSearch js_btnReset" type="reset" value="Reset">
     </form>
     <div class="resultsContainer">
         <section class="sectFav">
             <h2 class="sectFav__title">Mis series favoritas</h2>
-            <div class="divResultsFav js_resultSeriesFav"></div>
             <button class="js_trash sectFav__reset"> <i class="fas fa-trash"></i> Reset</button>
+            <div class="divResultsFav js_resultSeriesFav"></div>
         </section>
         <section class="sectResuls">
             <div class="divResults js_resultSearchSeries"></div>
