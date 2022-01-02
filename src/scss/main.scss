@@ -2,7 +2,9 @@
 @import 'core/reset';
 @import 'components/code';
 @import 'components/links';
-@import 'layout/page';
-@import 'layout/header';
-@import 'layout/footer';
+@import 'layout/01_header';
+@import 'layout/02_form';
+@import 'layout/03_main';
+@import 'layout/04_footer';
+@import 'layout/05_body';
 @import 'pages/index';
