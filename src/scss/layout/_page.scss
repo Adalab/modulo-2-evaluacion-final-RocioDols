@@ -1,28 +1,91 @@
+/* Estilos para form*/
+body{
+    background-image: linear-gradient(to bottom, #0b2e28, #299599, #113d34);
+    z-index: 1;
+}
+
+.form__inputSearch{
+    color: #38373a;
+    width: 30%;
+    font-size: 18px;
+    font-weight: 900;
+    height: 30px;
+    padding: 10px;
+    margin: 30px 0px 20px 30px;
+    outline: none;
+    background-color: #e8f0fe;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    border-right: 2px solid #f5b436;
+    transition: all ease 0.4s;
+}
+.form__inputSearch:hover{
+    background-color: rgb(163, 90, 103);
+    border-bottom: 2px solid peru;
+    border-right: 2px solid peru;
+    box-shadow: 2px 2px 2px;
+    color: white;
+    transform: translate(-1px, -1px);
+}
+.form__buttonSearch , .form__resetSearch {
+    font-family: "Tourney";
+    color: #38373a;
+    font-size: 18px;
+    font-weight: 600;
+    width: 150px;
+    padding: 10px;
+    margin: 20px 30px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    /* border-bottom: 2px solid #72f536;
+    border-right: 2px solid #8cf536; */
+    text-transform: uppercase;
+    background-color: #e8f0fe;
+    transition: all ease 0.4s;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
+    transition: all ease 0.4s;
+}
+.form__buttonSearch:hover , .form__resetSearch:hover{
+    background-color: rgb(163, 90, 103);
+    border-bottom: 2px solid peru;
+    border-right: 2px solid peru;
+    box-shadow: 2px 2px 2px;
+    color: white;
+    transform: translate(-1px, -1px);
+}
+
 /* Estilos para el main */
 
 .page__main{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
+    /* min-height: calc(100vh - 220px); */
+  
 }
 
 .resultsContainer{
     flex-grow: 1;
     width: 100%;
-    background-color: pink;
+    background-repeat: no-repeat;
     display:grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
 }
 .sectResuls{
-    border: 2px solid black;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
     border-radius: 20px;
     margin: 3em;
+    background-color: cadetblue;
 }
-.sectFav{
-    border: 2px solid black;
-    border-radius: 20px;
-    margin: 3em;
+
+.divResultsFav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .divResults{
     display: grid;
@@ -32,18 +95,66 @@
 .cardResult{
     /* width: 25%; */
     margin: 12px;
-    border: 1px solid purple;
+    border: 4px solid purple;
     border-radius: 10px;
-    padding: 20px;
+    background-color: rgb(211, 201, 183);
 }
 .cardResult__img{
     width: 100%;
+    border-radius: 30px;
+    padding: 20px;
+}
+.cardResult__title{
+    margin: .7em;
+    padding: 0px;
+    text-align: center;
+    color: purple;
+    text-transform: capitalize;
 }
 
 /* Favoritos */
+.sectFav{
+    border-radius: 20px;
+    margin: 3em;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
+}
 .sectFav__title{
     padding: 20px;
-    font-size: 24px;
+    font-size: 29px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.cardFav{
+   overflow: hidden;
+    margin: 2px;
+    border: solid purple 4px;
+    width: 70%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all ease 0.3s;
+    margin-bottom: 2em;
+    background-color: rosybrown;
+}
+.cardFav__img{
+    width: 100%;
+    border-radius: 5px;
+}
+.cardFav__titleFav{
+    margin: 12px;
+    font-size: 22px;
+    text-align: center;
+}
+.cardFav__iconX{
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .sectFav__reset{
@@ -57,11 +168,11 @@
     height: 40px;
     border: none;
     border-radius: 15px;
-    border-bottom: 2px solid purple;
-    border-right: 2px solid purple;
+    border-right: 4px solid purple;
     text-transform: uppercase;
     background-color: #e8f0fe;
     transition: all ease 0.4s;
+    box-shadow: 0px 0px 10px 5px rgb(80 57 214 / 30%);
 }
 
 .sectFav__reset:hover{
@@ -71,4 +182,12 @@
       box-shadow: 2px 2px 2px;
       color: white;
       transform: translate(-2px, -2px);
+}
+
+/* Estilos para clicar y cambiar fondo,borde y color de letra */
+
+.searchResultSelected{
+    border-color: red;
+    background-color: yellow;
+    color: red;
 }
