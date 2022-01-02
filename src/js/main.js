@@ -10,8 +10,6 @@ const resultSearchSeries = document.querySelector('.js_resultSearchSeries');
 const resultSeriesFav = document.querySelector('.js_resultSeriesFav');
 const trashFav = document.querySelector('.js_trash');
 
-//1111Para no escribir resul para css
-inputSearch.value = 'sailor';
 
 
 let data = [];
@@ -179,5 +177,6 @@ function handleResetFav() {
 trashFav.addEventListener('click', handleResetFav);
 
 
-//1111Para no escribir resul para css
+//Para no escribir resul para css
+inputSearch.value = 'sailor';
 btnSearch.click();

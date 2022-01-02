@@ -1,0 +1,79 @@
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &__inputSearch{
+        /* color: #38373a; */
+        width: 100%;
+        font-size: 18px;
+        font-weight: 900;
+        height: 50px;
+        padding: 20px;
+        margin: 30px 0px 20px 30px;
+        outline: none;    
+        background-color: #fef3e8;
+        text-decoration: none;
+        border: none;
+        border-radius: 20px;
+        /* border-right: 2px solid #f5b436; */
+        transition: all ease 0.4s;
+        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
+        &:hover{
+            background-color:hotpink;
+            color: white;
+            transform: translate(-1px, -1px);
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+
+        @media all and (min-width: 768px) {
+            width: 30%;
+        }
+    }
+    &__buttonSearch , &__resetSearch {
+        font-family: 'Courier New', Courier, monospace;
+        color: #38373a;
+        font-weight: 600;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 22px;
+        height: 40px;
+        border: none;
+        border-radius: 15px;
+        text-transform: uppercase;
+        background-color: #fef3e8;
+        transition: all ease 0.4s;
+        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 0.3);
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(228, 120, 32);
+            color: white;
+            transform: translate(-1px, -1px);
+            cursor: pointer;
+        }
+
+        @media all and (min-width: 768px) {
+            margin: 0px 10px;
+            font-weight: 800;
+        }
+    }
+    &__resetSearch{
+        margin-left: 0px;
+        &:hover{
+            background-color: rgb(180, 8, 40);
+        }
+    }
+    &__buttonSearch:hover ,  &__resetSearch:hover{
+        background-color: rgb(90, 163, 102);
+        color: white;
+        transform: translate(-1px, -1px);
+        cursor: pointer;
+    }
+        
+
+    @media all and (min-width: 768px) {
+        display: block;
+    }
+}
