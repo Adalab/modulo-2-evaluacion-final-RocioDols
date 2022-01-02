@@ -5,9 +5,25 @@ body{
     z-index: 1;
     font-family: 'Courier New', Courier, monospace;
 }
+// .page__header{
+//     display: flex;
+//     padding: 30px;
+
+//     &--img{
+//         height: 100px;
+//     }
+//     &--title{
+//         color: white;
+//         margin:40px 20px;
+//         text-align: center;
+//         font-size: 45px;
+//     }
+// }
 .page__header{
     display: flex;
-    padding: 30px;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 2.5em;
 
     &--img{
         height: 100px;
@@ -16,15 +32,28 @@ body{
         color: white;
         margin:40px 20px;
         text-align: center;
-        font-size: 45px;
+        font-size: 40px;
+        flex-wrap: wrap;
+
+        @media all and (min-width: 768px) {
+            font-size: 50px;
+        }
     }
+
+    @media all and (min-width: 768px) {
+        padding: 38px;
+    }
+
 }
 
 .form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
     &__inputSearch{
         /* color: #38373a; */
-        width: 30%;
+        width: 100%;
         font-size: 18px;
         font-weight: 900;
         height: 50px;
@@ -44,88 +73,20 @@ body{
             transform: translate(-1px, -1px);
             cursor: pointer;
             font-family: 'Courier New', Courier, monospace;
-        }   
-    }
-    &__buttonSearch , &__resetSearch {
-        font-family: "Tourney";
-        color: #38373a;
-        font-size: 18px;
-        font-weight: 600;
-        width: 150px;
-        padding: 10px;
-        margin: 20px 22px;
-        height: 40px;
-        border: none;
-        border-radius: 20px;
-        text-transform: uppercase;
-        background-color: #e8f0fe;
-        transition: all ease 0.4s;
-        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
-        transition: all ease 0.4s;
-        cursor: pointer;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: 800;
-    }
-    &__resetSearch{
-        margin-left: 0px;
-        &:hover{
-            background-color: rgb(180, 8, 40);
+        }
+        
+
+        @media all and (min-width: 768px) {
+            width: 30%;
         }
     }
-    &__buttonSearch:hover ,  &__resetSearch:hover{
-        background-color: rgb(90, 163, 102);
-        color: white;
-        transform: translate(-1px, -1px);
-        cursor: pointer;
-    }
-
-}
-
-
-/* Estilos para el main */
-
-.page__main{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding:0px 30px;
-  
-}
-//Estilos para el contenedor de resultados: sectFav y sectResult
-
-.resultsContainer{
-    flex-grow: 1;
-    width: 100%;
-    background-repeat: no-repeat;
-    display:grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
-}
-
-/* Favoritos */
-.sectFav{
-    border-radius: 20px;
-    margin: 3em;
-    background-color: cadetblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
-    cursor: pointer;
-
-    &__title{
-        padding: 20px;
-        font-size: 29px;
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    &__reset{
-        font-family: "";
+    &__buttonSearch , &__resetSearch {
+        font-family: 'Courier New', Courier, monospace;
         color: #38373a;
         font-weight: 600;
-        padding: 10px;
-        margin-bottom: 20px;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 22px;
         height: 40px;
         border: none;
         border-radius: 15px;
@@ -140,30 +101,156 @@ body{
             transform: translate(-1px, -1px);
             cursor: pointer;
         }
+
+        @media all and (min-width: 768px) {
+            margin: 0px 10px;
+            font-weight: 800;
+        }
+    }
+    &__resetSearch{
+        margin-left: 0px;
+        &:hover{
+            background-color: rgb(180, 8, 40);
+        }
+    }
+    &__buttonSearch:hover ,  &__resetSearch:hover{
+        background-color: rgb(90, 163, 102);
+        color: white;
+        transform: translate(-1px, -1px);
+        cursor: pointer;
+    }
+        
+
+    @media all and (min-width: 768px) {
+        display: block;
+    }
+}
+
+
+/* Estilos para el main */
+
+.page__main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    @media all and (min-width: 768px) {
+        padding:0px 30px;
+    }
+  
+}
+//Estilos para el contenedor de resultados: sectFav y sectResult
+
+.resultsContainer{
+    flex-grow: 1;
+    width: 100%;
+    background-repeat: no-repeat;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    @media all and (min-width: 768px) {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+/* Favoritos */
+.sectFav{
+    border-radius: 20px;
+    margin: 1em;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
+    cursor: pointer;
+
+    &__title{
+        padding: 22px;
+        font-size: 32px;
+        text-align: center;
+        text-transform: capitalize;
+
+        @media all and (min-width: 768px) {
+        font-size: 29px;
+        }
+    }
+
+    &__reset{
+        font-family: "";
+        color: #38373a;
+        font-weight: 600;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 22px;
+        height: 40px;
+        border: none;
+        border-radius: 15px;
+        text-transform: uppercase;
+        background-color: #fef3e8;
+        transition: all ease 0.4s;
+        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 0.3);
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(228, 120, 32);
+            color: white;
+            transform: translate(-1px, -1px);
+            cursor: pointer;
+        }
+
+        @media all and (min-width: 768px) {
+            margin-top: 0px;
+        }
+    }
+
+    @media all and (min-width: 768px) {
+        margin: 3em;
     }
 
 }
 .divResultsFav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+    grid-template-rows: 1fr;
+    cursor: pointer;
+    padding: 10px 5px;
+
+    @media all and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 10px;
+    }
 }
 
 .cardFav{
-   overflow: hidden;
-    margin: 2px;
-    border: solid purple 4px;
-    width: 70%;
-    border-radius: 20px;
+    overflow: hidden;
+    // margin: 2px;
+    // border: solid purple 4px;
+    // width: 70%;
+    // border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transition: all ease 0.3s;
-    margin-bottom: 2em;
-    background-color: #F4A460;
+    // transition: all ease 0.3s;
+    // margin-bottom: 2em;
+    // background-color: #F4A460;
+    // transition: all ease 0.4s;
+    // box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 1.2);
+
+    margin: 10px 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(211, 201, 183);
     transition: all ease 0.4s;
     box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 1.2);
+    background-color: transparen;
+    color: black;
+    position: relative;
     &:hover{
         transform: translate(-1px, -1px);
         background-color: hotpink;
@@ -185,27 +272,48 @@ body{
         color: red;
     }
 
+    @media all and (min-width: 768px) {
+        width: 80%;
+    }
+
 }
 // Estilos para el contenedor de resultados
 
 .sectResuls{
     box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
     border-radius: 20px;
-    margin: 3em;
+    margin: 1em;
     background-color: cadetblue;
+
+    @media all and (min-width: 768px) {
+        margin: 3em;
+    }
     
 }
 
 .divResults{
     display: grid;
-    grid-template-columns: repeat(4,1fr) ;
+    grid-template-columns: repeat(2,1fr) ;
     grid-template-rows: 1fr;
     cursor: pointer;
-    padding: 2em 3em;
+    padding: 10px 5px;
+
+    @media all and (min-width: 768px) {
+        grid-template-columns: repeat(3,1fr) ;
+        padding: 2em 3em;
+    }
+
+    @media all and (min-width:1024px) {
+        grid-template-columns: repeat(4,1fr) ;
+        padding: 2em 3em;
+    }
+
+
 }
+
 .cardResult{
     /* width: 25%; */
-    margin: 12px;
+    margin: 10px 5px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: rgb(211, 201, 183);
@@ -214,6 +322,7 @@ body{
     background-color: transparen;
     color: black;
     position: relative;
+
     &:hover{
         cursor: pointer;
         transform: translate(-1px, -1px);
@@ -230,6 +339,10 @@ body{
         text-align: center;
         text-transform: capitalize;
         font-size: 16px;
+    }
+
+    @media all and (min-width: 768px) {
+        margin: 12px;
     }
 }
 
