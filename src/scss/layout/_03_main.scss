@@ -49,7 +49,7 @@
     }
 
     &__reset{
-        font-family: "";
+        font-family: $fontBody;
         color: #38373a;
         font-weight: 600;
         padding: 12px;
@@ -118,12 +118,12 @@
     background-color: rgb(211, 201, 183);
     transition: all ease 0.4s;
     box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 1.2);
-    background-color: transparen;
+    background-color: #c7d163eb;
     color: black;
     position: relative;
     &:hover{
         transform: translate(-1px, -1px);
-        background-color: hotpink;
+        background-color: $selectCardHover;
     }
 
     &__img{
@@ -186,7 +186,7 @@
     margin: 10px 5px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: rgb(211, 201, 183);
+    background-color: #92bfc3;
     transition: all ease 0.4s;
     box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 1.2);
     background-color: transparen;
@@ -196,7 +196,7 @@
     &:hover{
         cursor: pointer;
         transform: translate(-1px, -1px);
-        background-color: hotpink;
+        background-color: $selectCardHover;
     }
     &__img{
         width: 100%;
@@ -209,10 +209,11 @@
         text-align: center;
         text-transform: capitalize;
         font-size: 16px;
+        font-weight: 700;
     }
 
     @media all and (min-width: 768px) {
-        margin: 12px;
+        margin: 18px;
     }
 }
 

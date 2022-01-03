@@ -4,7 +4,6 @@
     justify-content: space-evenly;
 
     &__inputSearch{
-        /* color: #38373a; */
         width: 100%;
         font-size: 18px;
         font-weight: 900;
@@ -12,7 +11,7 @@
         padding: 20px;
         margin: 30px 0px 20px 30px;
         outline: none;    
-        background-color: #fef3e8;
+        background-color: $colorImputSearch;
         text-decoration: none;
         border: none;
         border-radius: 20px;
@@ -20,7 +19,7 @@
         transition: all ease 0.4s;
         box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
         &:hover{
-            background-color:hotpink;
+            background-color:$selectCardHover;
             color: white;
             transform: translate(-1px, -1px);
             cursor: pointer;
@@ -33,7 +32,7 @@
         }
     }
     &__buttonSearch , &__resetSearch {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: $fontBody;
         color: #38373a;
         font-weight: 600;
         padding: 12px;
@@ -43,12 +42,12 @@
         border: none;
         border-radius: 15px;
         text-transform: uppercase;
-        background-color: #fef3e8;
+        background-color: $bGcolorInput;
         transition: all ease 0.4s;
         box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 0.3);
         cursor: pointer;
         &:hover{
-            background-color: rgb(228, 120, 32);
+            background-color:$hoverResetFav;
             color: white;
             transform: translate(-1px, -1px);
             cursor: pointer;
@@ -59,19 +58,19 @@
             font-weight: 800;
         }
     }
-    &__resetSearch{
-        margin-left: 0px;
-        &:hover{
-            background-color: rgb(180, 8, 40);
-        }
-    }
+    
     &__buttonSearch:hover ,  &__resetSearch:hover{
-        background-color: rgb(90, 163, 102);
+        background-color: $hoverBtnSearch;
         color: white;
         transform: translate(-1px, -1px);
         cursor: pointer;
     }
-        
+    &__resetSearch{
+        margin-left: 0px;
+        &:hover{
+            background-color: $hoverBtnSearchRemove;
+        }
+    } 
 
     @media all and (min-width: 768px) {
         display: block;
