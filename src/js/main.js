@@ -9,7 +9,7 @@ const btnReset = document.querySelector('.js_btnReset');
 const resultSearchSeries = document.querySelector('.js_resultSearchSeries');
 const resultSeriesFav = document.querySelector('.js_resultSeriesFav');
 const trashFav = document.querySelector('.js_trash');
-
+const form = document.querySelector('.js_form');
 
 
 let data = [];
@@ -141,7 +141,7 @@ function renderFav() {
 
 
 
-btnSearch.addEventListener('click', handleButtonSearch);
+
 
 //LocalStorage
 
@@ -174,8 +174,11 @@ function handleResetFav() {
     renderFav();
     setFavorite();
 }
-trashFav.addEventListener('click', handleResetFav);
 
+
+btnSearch.addEventListener('click', handleButtonSearch);
+trashFav.addEventListener('click', handleResetFav);
+form.addEventListener('submit', (ev) => ev.preventDefault());
 
 //Para no escribir resul para css
 inputSearch.value = 'sailor';
