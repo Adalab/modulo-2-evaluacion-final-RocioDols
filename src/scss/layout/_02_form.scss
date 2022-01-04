@@ -17,7 +17,7 @@
         border-radius: 20px;
         /* border-right: 2px solid #f5b436; */
         transition: all ease 0.4s;
-        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 3.0);
+        box-shadow: $boxSadow;
         &:hover{
             background-color:$selectCardHover;
             color: white;
@@ -26,7 +26,6 @@
             font-family: 'Courier New', Courier, monospace;
         }
         
-
         @media all and (min-width: 768px) {
             width: 30%;
         }
@@ -44,7 +43,7 @@
         text-transform: uppercase;
         background-color: $bGcolorInput;
         transition: all ease 0.4s;
-        box-shadow: 0px 0px 10px 0px rgba(80, 57, 214, 0.3);
+        box-shadow: $boxSadow;
         cursor: pointer;
         &:hover{
             background-color:$hoverResetFav;

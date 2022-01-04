@@ -38,6 +38,8 @@ function renderSerie() {
         //Saco el serie.image_url a una variable externa
         // let image_url
         let imgUrl = serie.image_url;
+        console.log(serie.image_url);
+        //Aqui no es null porque el api no tiene ninguna vacía, habria que encontrat en el valor de console.log(serie.image_url) un valor que no lleve imagen.
         if (imgUrl === null) {
             imgUrl = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
         }
@@ -183,3 +185,5 @@ form.addEventListener('submit', (ev) => ev.preventDefault());
 //Para no escribir resul para css
 inputSearch.value = 'sailor';
 btnSearch.click();
+
+document.querySelector
