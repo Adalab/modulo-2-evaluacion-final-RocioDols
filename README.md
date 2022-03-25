@@ -1,7 +1,10 @@
 <h1> Módulo 2: Ejercicio de evaluación final de JavaScript</h1>
 
-<h2>Enunciado: </h2>
 
+[![anime-finder.png](https://i.postimg.cc/zXxdfBzQ/anime-finder.png)](https://postimg.cc/vc67qG67)
+
+
+<h2> 🍒 Enunciado: </h2>
 
   <p>El ejercicio consiste en desarrollar una aplicación web de búsqueda de series de anime, que nos permite des/marcar las series como favoritas y guardarlas en local storage. El ejercicio también tiene una parte de maquetación con HTML y SASS.</p>
 
@@ -11,7 +14,7 @@
   <li>Un campo de texto y un botón para buscar series por su título.</li>
   <li>Un listado de resultados de búsqueda donde aparece el cartel de la serie y el título.</li>
 
-  <h2>Búsqueda </h2>
+  <h2>2. Búsqueda </h2>
 
 <ul>
   <li>Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de Jikan para la búsqueda de series anime.</li>
@@ -21,6 +24,10 @@
   <li>Para pintar la información en la página, se puede elegir entre hacerlo de forma básica con innerHTML o manipulando de forma avanzada el DOM.</li>
 </ul>
 <h2> 3. Favoritos</h2>
+  
+[![anime-finder-2.png](https://i.postimg.cc/MGB2RRXH/anime-finder-2.png)](https://postimg.cc/JyR2CsNC)
+  
+  
 <p>Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son sus series favoritas. Para ello, al hacer clic sobre una serie debe pasar lo siguiente:</p>
 <ul>
   <li>El color de fondo y el de fuente se intercambian, indicando que es una serie favorita.</li>
