@@ -48,10 +48,10 @@
 
 ---
 
-  </h2>Instalación</h2>
+  <h2>Instalación</h2>
 
-  <h3>Instala el proyecto con npm</h3>
+  <p>Instala el proyecto con npm</p>
 
   <p>bash</p>
-  npm install
-  npm start
+  <p>npm install</p>
+  <p>npm start</p>
