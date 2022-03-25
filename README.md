@@ -11,7 +11,7 @@
   <li>Un campo de texto y un botón para buscar series por su título.</li>
   <li>Un listado de resultados de búsqueda donde aparece el cartel de la serie y el título.</li>
 
-  <h2>. Búsqueda </h2>
+  <h2>Búsqueda </h2>
 
 <ul>
   <li>Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de Jikan para la búsqueda de series anime.</li>
