@@ -48,7 +48,7 @@
 
 ---
 
-  </p>Instalación</p>
+  </h2>Instalación</h2>
 
   <h3>Instala el proyecto con npm</h3>
 
