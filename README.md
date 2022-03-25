@@ -1,5 +1,5 @@
 # Módulo 2: Ejercicio de evaluación final de JavaScript
-
+[![Captura-de-pantalla-2022-03-25-133820.png](https://i.postimg.cc/6pdh1DsF/Captura-de-pantalla-2022-03-25-133820.png)](https://postimg.cc/Snx8n1xG)
 **Enunciado:**
 
 El ejercicio consiste en desarrollar una aplicación web de búsqueda de series de anime, que nos permite des/marcar las series como favoritas y guardarlas en local storage. El ejercicio también tiene una parte de maquetación con HTML y SASS.
@@ -20,7 +20,7 @@ La aplicación de búsqueda de serie consta de dos partes:
 - Para pintar la información en la página se puede elegir entre hacerlo de forma básica con innerHTML o manipulando de forma avanzada el DOM.
 
 **3. Favoritos**
-
+[![Captura-de-pantalla-2022-03-25-134522.png](https://i.postimg.cc/0yd3sjMC/Captura-de-pantalla-2022-03-25-134522.png)](https://postimg.cc/CR5JCF4Z)
 Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son sus series favoritas. Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
 
 - El color de fondo y el de fuente se intercambian, indicando que es una serie favorita.
@@ -42,7 +42,7 @@ Y ya sería fantástico si al final de la lista de favoritos hay un botón para 
 
 Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilos. En cualquier caso os dejamos una propuesta gráfica.
 
-<img src="./src/images/design.png" alt="Design" height="500"/>
+
 
 ---
 
